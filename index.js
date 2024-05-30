@@ -19,11 +19,21 @@ app.get('/api/registros', (req , res) =>{
     res.send(registros);
 });
 
-app.get('/api/:usser', (req , res) =>{
-    const registro = registros.find(x => x.modelo === req.params.modelo);
+app.get('/api/registros/:usser', (req , res) =>{
+    const registro = registros.find(x => x.usser === req.params.usser);
     if (!registro) return res.status(404).send('No se ha encontrado');
     else res.send(auto);
 });
 
 const port = process.env.port || 80;
 app.listen(port, () => console.log(`Puerto ${port}`));
+
+app.post('api/registros', (req, res) => {
+    const registro = {
+        usser: req.body.name,
+        pass: req.body.name,
+        name: req.body.name
+    };
+    registros.push(registro);
+    res.send(registro);
+});
