@@ -25,7 +25,7 @@ app.get('/api/registros/:usser', (req , res) =>{
     else res.send(registro);
 });
 
-app.post('api/registros', (req, res) => {
+app.post('/api/registros', (req, res) => {
     const registro = {
         usser: req.body.usser,
         pass: req.body.pass,
