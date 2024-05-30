@@ -22,7 +22,7 @@ app.get('/api/registros', (req , res) =>{
 app.get('/api/registros/:usser', (req , res) =>{
     const registro = registros.find(x => x.usser === req.params.usser);
     if (!registro) return res.status(404).send('No se ha encontrado');
-    else res.send(auto);
+    else res.send(registro);
 });
 
 const port = process.env.port || 80;
