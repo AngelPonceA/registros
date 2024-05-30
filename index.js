@@ -25,15 +25,15 @@ app.get('/api/registros/:usser', (req , res) =>{
     else res.send(registro);
 });
 
-const port = process.env.port || 80;
-app.listen(port, () => console.log(`Puerto ${port}`));
-
 app.post('api/registros', (req, res) => {
     const registro = {
-        usser: req.body.name,
-        pass: req.body.name,
+        usser: req.body.usser,
+        pass: req.body.pass,
         name: req.body.name
     };
     registros.push(registro);
     res.send(registro);
 });
+
+const port = process.env.port || 80;
+app.listen(port, () => console.log(`Puerto ${port}`));
