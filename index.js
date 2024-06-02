@@ -10,8 +10,13 @@ const registros = [
         usser: 'admin',
         pass: '123',
         name: 'Mod'
+    },
+    {
+        usser: 'angel',
+        pass: '2001',
+        name: 'damon'
     }
-];
+    ];
 
 app.get('/', (req , res) =>{
     res.send('Api de registro funcionando');
@@ -37,5 +42,5 @@ app.post('/api/registros', (req, res) => {
     res.send(registro);
 });
 
-const port = process.env.port || 80;
+const port = process.env.port || 3001;
 app.listen(port, () => console.log(`Puerto ${port}`));
